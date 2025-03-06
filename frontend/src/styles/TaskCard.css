@@ -1,0 +1,145 @@
+/* TaskCard.css */
+
+/* Task card container */
+.task-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.task-card:hover {
+    transform: scale(1.02);
+}
+
+/* Input fields */
+.task-input,
+.task-textarea,
+.task-select,
+.task-date {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.task-input:focus,
+.task-textarea:focus,
+.task-select:focus,
+.task-date:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Task title */
+.task-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Task description */
+.task-description {
+    color: #555;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+/* Task meta information */
+.task-meta {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 6px;
+}
+
+/* Button styles */
+.task-btn {
+    padding: 10px 16px;
+    font-size: 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.task-btn.edit {
+    background-color: #007bff;
+    color: white;
+}
+
+.task-btn.edit:hover {
+    background-color: #0056b3;
+}
+
+.task-btn.delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+.task-btn.delete:hover {
+    background-color: #c82333;
+}
+
+.task-btn.save {
+    background-color: #28a745;
+    color: white;
+}
+
+.task-btn.save:hover {
+    background-color: #218838;
+}
+
+.task-btn.cancel {
+    background-color: #6c757d;
+    color: white;
+}
+
+.task-btn.cancel:hover {
+    background-color: #5a6268;
+}
+
+/* Button group */
+.task-btn-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .task-card {
+        padding: 16px;
+    }
+
+    .task-input,
+    .task-textarea,
+    .task-select,
+    .task-date {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .task-title {
+        font-size: 18px;
+    }
+
+    .task-description {
+        font-size: 14px;
+    }
+
+    .task-meta {
+        font-size: 12px;
+    }
+
+    .task-btn {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}

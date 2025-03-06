@@ -1,0 +1,74 @@
+/* TaskForm.css */
+
+/* Form container */
+.task-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    transition: transform 0.2s ease-in-out;
+}
+
+.task-form:hover {
+    transform: scale(1.02);
+}
+
+/* Input fields */
+.task-input,
+.task-textarea,
+.task-date {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.task-input:focus,
+.task-textarea:focus,
+.task-date:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Button styles */
+.task-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 17px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.task-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .task-form {
+        padding: 16px;
+    }
+
+    .task-input,
+    .task-textarea,
+    .task-date {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .task-btn {
+        padding: 10px;
+        font-size: 16px;
+    }
+}
