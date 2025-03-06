@@ -12,19 +12,12 @@ const allowedOrigins = ["https://tasktypescript.vercel.app", "http://localhost:5
 
 app.use(
   cors({
-    origin: function (origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
+    origin: allowedOrigins,
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type"],
+    allowedHeaders: ["Content-Type", "Authorization"], // Add "Authorization" here
   })
 );
-
 
 app.use(express.json());
 app.use("/api", router);
@@ -34,12 +27,8 @@ const pool = new Pool({
 });
 
 pool.connect()
-  .then(() => {
-    console.log("Database connected successfully");
-  })
-  .catch((err: { stack: any; }) => {
-    console.error("Database connection error", err.stack);
-  });
+  .then(() => console.log("Database connected successfully"))
+  .catch((err: { stack: any }) => console.error("Database connection error", err.stack));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
