@@ -8,19 +8,23 @@ dotenv.config();
 
 const app = express();
 
-const allowedOrigins = [
-  "https://tasktypescript.vercel.app",
-  "https://task-type-script.vercel.app", // Add your correct frontend URL
-  "http://localhost:5173" // Keep local for testing
-];
+const allowedOrigins = ["https://tasktypescript.vercel.app", "http://localhost:5173"];
+
 app.use(
   cors({
-    origin: "*", // ⚠️ Allow all origins (Only for testing, not for production)
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type"],
   })
 );
+
 
 app.use(express.json());
 app.use("/api", router);
