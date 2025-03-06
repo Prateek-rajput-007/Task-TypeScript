@@ -1,8 +1,8 @@
 import axios from "axios";
 import { User, Task } from "../types";
 
-// const API_URL = import.meta.env.VITE_API_URL; // Replace with your backend URL
-cont API_URL = "https://task-typescript-backend.onrender.com/api";
+const API_URL = "https://task-typescript-backend.onrender.com"; // ✅ Correct syntax
+
 const api = axios.create({
   baseURL: API_URL,
 });
