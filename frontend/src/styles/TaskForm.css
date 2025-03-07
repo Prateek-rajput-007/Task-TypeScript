@@ -29,6 +29,7 @@
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
+/* Accessibility: Improve focus state */
 .task-input:focus,
 .task-textarea:focus,
 .task-date:focus {
@@ -47,17 +48,20 @@
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, transform 0.1s;
 }
 
+/* Button hover effect */
 .task-btn:hover {
     background-color: #0056b3;
+    transform: scale(1.03);
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
     .task-form {
         padding: 16px;
+        max-width: 90%;
     }
 
     .task-input,
@@ -70,5 +74,24 @@
     .task-btn {
         padding: 10px;
         font-size: 16px;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .task-form {
+        padding: 12px;
+    }
+
+    .task-input,
+    .task-textarea,
+    .task-date {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .task-btn {
+        padding: 8px;
+        font-size: 14px;
     }
 }
